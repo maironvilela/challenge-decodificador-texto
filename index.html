@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet" />
+  <title>Document</title>
+  <link rel="stylesheet" type="text/css" href="global.css" media="screen" />
+  <link rel="stylesheet" type="text/css" href="styles.css" media="screen" />
+</head>
+
+<body>
+  <div id="container">
+    <header>
+      <img src="./assets/logo.svg" />
+    </header>
+   
+    <section id="container__empty-message"  >      
+        <img src="./assets/search.svg" />
+        <strong id="empty-message__message">Nenhuma mensagem encontrada</strong>
+        <span id="empty-message__information">
+          Digite um texto que voce deseje criptografar ou descriptografar
+        </span>
+    </section>
+
+    <section id="container__not-empty-message" class="hidden" >
+      <p id="output_text">tes</p>
+      <button class="btn-home" id="btn-copiar">Copiar</button> 
+    </section>
+
+    <main id="main">
+      <form id="form">
+        <textarea id="input-text" placeholder="Digite seu Texto"></textarea>
+        <div id="alert">
+          <img src="./assets/alert.svg" />
+          <span>Apenas letras minúsculas e sem acento.</span>
+        </div>
+
+        <div id="actions">
+          <button onclick="handleEncrypt()"  class="btn-home" id="btn-criptografar">Criptografar</button>
+          <button onclick="decrypt()" class="btn-home" id="btn-descriptografar">
+            Descriptografar
+          </button>
+        </div>
+      </form>
+    </main>
+
+
+  </div>
+
+
+  </div>
+  <script src="app.js" defer></script>
+
+</body>
+
+</html>
