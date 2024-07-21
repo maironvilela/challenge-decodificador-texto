@@ -9,6 +9,7 @@
   height: 6.7rem;
   border-radius: 2.4rem;
   font-size: 1.6rem;
+  transition: all 0.8s;
 }
 
 #container {
@@ -22,7 +23,7 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  height: 95vh;
+  height: calc(100vh - 10rem);
   background-color: #fff;
   border-radius: 32px;
   width: 40rem;
@@ -115,10 +116,16 @@
   background-color: var(--dark-blue-300);
   color: var(--light-blue-50);
 }
+#actions__btn-encrypt:hover {
+  background-color: var(--dark-blue-200);
+}
 
 #actions__btn-dencrypt {
   background-color: var(--light-blue-50);
   color: var(--dark-blue-300);
+}
+#actions__btn-dencrypt:hover {
+  filter: brightness(0.8);
 }
 
 #not-empty-message__btn-copy {
@@ -127,6 +134,10 @@
   color: var(--dark-blue-300);
   position: relative;
   margin-top: auto;
+}
+
+#not-empty-message__btn-copy:hover {
+  background-color: var(--light-blue-50);
 }
 
 #not-empty-message__output-text {

@@ -135,6 +135,13 @@ function getLetterAndSplice(array, token, letter) {
   return { character, splice }
 }
 
+function handleCopyTextOutputToInputText() {
+  const outputText = document.getElementById('not-empty-message__output-text')
+  const inputText = document.getElementById('form__input-text')
+  inputText.value = outputText.innerText
+  outputText.innerHTML = ''
+}
+
 /*
 function decrypt(hashMessage = 'maiimesrobern vimeslenterlai') {
   console.time('TempoExecucao')
