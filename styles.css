@@ -4,8 +4,17 @@
   box-sizing: border-box;
 }
 
+.btn-home {
+  width: 32.8rem;
+  height: 6.7rem;
+  border-radius: 2.4rem;
+  font-size: 1.6rem;
+}
+
 #container {
   padding: 4rem;
+  max-width: 1440px;
+  margin: 0 auto;
 }
 
 #container__empty-message {
@@ -55,25 +64,20 @@
   height: 100vh;
 }
 
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: start;
-}
-
 #main {
   padding-top: 8rem;
   padding-left: 24rem;
   width: 68rem;
 }
 
-#main form {
+#form {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
 }
 
-#main form textarea {
-  height: 10rem;
+#form__input-text {
+  height: 30rem;
   background: transparent;
   border: none;
   font-size: 3.2rem;
@@ -83,17 +87,8 @@ header {
   outline: none;
   margin-bottom: 2rem;
 }
-#main form img {
-  width: 1.6rem;
-  height: 1.6rem;
-}
 
-#main form span {
-  font-size: 1.2rem;
-  color: var(--gray-400);
-}
-
-#alert {
+#form__alert {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -101,29 +96,32 @@ header {
   padding-bottom: 1.6rem;
 }
 
-#actions {
+#form__img {
+  width: 1.6rem;
+  height: 1.6rem;
+}
+
+#form__alert-message {
+  font-size: 1.2rem;
+  color: var(--gray-400);
+}
+
+#form__actions {
   display: flex;
   gap: 2.4rem;
 }
 
-.btn-home {
-  width: 32.8rem;
-  height: 6.7rem;
-  border-radius: 2.4rem;
-  font-size: 1.6rem;
-}
-
-#btn-criptografar {
+#actions__btn-encrypt {
   background-color: var(--dark-blue-300);
   color: var(--light-blue-50);
 }
 
-#btn-descriptografar {
+#actions__btn-dencrypt {
   background-color: var(--light-blue-50);
   color: var(--dark-blue-300);
 }
 
-#btn-copiar {
+#not-empty-message__btn-copy {
   background-color: transparent;
   border: 1px solid var(--dark-blue-300);
   color: var(--dark-blue-300);
@@ -131,7 +129,7 @@ header {
   margin-top: auto;
 }
 
-#output-text {
+#not-empty-message__output-text {
   font-size: 24px;
   line-height: 150%;
 }

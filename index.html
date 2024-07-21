@@ -18,7 +18,7 @@
       <img src="./assets/logo.svg" />
     </header>
    
-    <section id="container__empty-message"  >      
+    <section id="container__empty-message"   >      
         <img src="./assets/search.svg" />
         <strong id="empty-message__message">Nenhuma mensagem encontrada</strong>
         <span id="empty-message__information">
@@ -26,22 +26,23 @@
         </span>
     </section>
 
-    <section id="container__not-empty-message" class="hidden" >
-      <p id="output_text">tes</p>
-      <button class="btn-home" id="btn-copiar">Copiar</button> 
+    <section id="container__not-empty-message" class="hidden"  >
+      <p id="not-empty-message__output-text">tes</p>
+      <button class="btn-home" id="not-empty-message__btn-copy">Copiar</button> 
     </section>
 
     <main id="main">
       <form id="form">
-        <textarea id="input-text" placeholder="Digite seu Texto"></textarea>
-        <div id="alert">
-          <img src="./assets/alert.svg" />
-          <span>Apenas letras minúsculas e sem acento.</span>
-        </div>
+           <textarea id="form__input-text" placeholder="Digite seu Texto" ></textarea>
+          <div id="form__alert">
+            <img id="form__img" src="./assets/alert.svg" />
+            <span id="form__alert-message">Apenas letras minúsculas e sem acento.</span>
+         </div>
+   
 
-        <div id="actions">
-          <button onclick="handleEncrypt()"  class="btn-home" id="btn-criptografar">Criptografar</button>
-          <button onclick="handleDecryptRecursivo()" class="btn-home" id="btn-descriptografar">
+        <div id="form__actions">
+          <button onclick="handleEncrypt()"  class="btn-home" id="actions__btn-encrypt">Criptografar</button>
+          <button onclick="handleDecrypt()" class="btn-home" id="actions__btn-dencrypt">
             Descriptografar
           </button>
         </div>
