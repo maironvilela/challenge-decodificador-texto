@@ -1,16 +1,18 @@
 function handleEncrypt() {
-  document.getElementById('form').addEventListener('submit', function (event) {
-    event.preventDefault()
-  })
+  document
+    .getElementById('main__form-text')
+    .addEventListener('submit', function (event) {
+      event.preventDefault()
+    })
 
-  const inputText = document.getElementById('form__input-text')
+  const inputText = document.getElementById('form-text__input')
   const hashMessage = encrypt(inputText.value)
 
-  const outputText = document.getElementById('not-empty-message__output-text')
-  outputText.innerHTML = hashMessage
+  const outputText = document.getElementById('output-message__output-text')
+  outputText.value = hashMessage
 
-  hiddenElementById('container__empty-message')
-  showElementById('container__not-empty-message')
+  hiddenElementById('container__no-message')
+  showElementById('container__output-message')
 
   inputText.value = ''
 }
@@ -46,22 +48,24 @@ function showElementById(id) {
 }
 
 function handleDecrypt() {
-  document.getElementById('form').addEventListener('submit', function (event) {
-    event.preventDefault()
-  })
+  document
+    .getElementById('main__form-text')
+    .addEventListener('submit', function (event) {
+      event.preventDefault()
+    })
 
-  const inputText = document.getElementById('form__input-text')
+  hiddenElementById('container__no-message')
+  showElementById('container__output-message')
+  const inputText = document.getElementById('form-text__input')
   const hashMessage = inputText.value
 
   const charactersArray = ['a', 'e', 'i', 'o', 'u']
   let encryptedTextInArray = hashMessage.split('')
   const result = rec(encryptedTextInArray, charactersArray, '')
 
-  const outputText = document.getElementById('not-empty-message__output-text')
-  outputText.innerHTML = result
-
-  hiddenElementById('container__empty-message')
-  showElementById('container__not-empty-message')
+  const outputText = document.getElementById('output-message__output-text')
+  outputText.value = result
+  inputText.value = ''
 }
 
 function rec(array, charactersArray, result) {
@@ -89,7 +93,6 @@ function rec(array, charactersArray, result) {
 
   switch (array[0]) {
     case 'a':
-      console.log('Letra A')
       character = 'a'
       token = characterToEncryptedToken[character]
       break
@@ -136,79 +139,11 @@ function getLetterAndSplice(array, token, letter) {
 }
 
 function handleCopyTextOutputToInputText() {
-  const outputText = document.getElementById('not-empty-message__output-text')
-  const inputText = document.getElementById('form__input-text')
-  inputText.value = outputText.innerText
-  outputText.innerHTML = ''
+  const outputText = document.getElementById('output-message__output-text')
+  const inputText = document.getElementById('form-text__input')
+  inputText.value = outputText.value
+  outputText.value = ''
+
+  hiddenElementById('container__output-message')
+  showElementById('container__no-message')
 }
-
-/*
-function decrypt(hashMessage = 'maiimesrobern vimeslenterlai') {
-  console.time('TempoExecucao')
-
-  document.getElementById('form').addEventListener('submit', function (event) {
-    event.preventDefault()
-  })
-
-  let result = ''
-  let aux = ''
-  let palavra = hashMessage.split('')
-  let arrayAuxiliar = []
-
-  while (true) {
-    if (palavra.length === 0) {
-      break
-    }
-
-    arrayAuxiliar = [...palavra]
-
-    switch (palavra[0]) {
-      case 'a':
-        aux = arrayAuxiliar.splice(0, 2)
-        console.log('Auxiliar: ' + aux.join(''))
-        if (aux.join('') === 'ai') {
-          result += 'a'
-          palavra.splice(0, 2)
-        }
-
-        break
-      case 'e':
-        aux = arrayAuxiliar.splice(0, 5)
-        if (aux.join('') === 'enter') {
-          result += 'e'
-          palavra.splice(0, 5)
-        }
-        break
-      case 'i':
-        console.log('Entrada: ', palavra)
-        aux = arrayAuxiliar.splice(0, 4)
-        if (aux.join('') === 'imes') {
-          result += 'i'
-          palavra.splice(0, 4)
-        }
-        console.log('Saida: ', palavra)
-
-        break
-      case 'o':
-        aux = arrayAuxiliar.splice(0, 4)
-        if (aux.join('') === 'ober') {
-          result += 'o'
-          palavra.splice(0, 4)
-        }
-        break
-      case 'u':
-        aux = arrayAuxiliar.splice(0, 4)
-        if (aux.join('') === 'ufat') {
-          result += 'e'
-          palavra.splice(0, 4)
-        }
-        break
-      default:
-        result = result + palavra[0]
-        palavra.splice(0, 1)
-    }
-  }
-
-  console.timeEnd('TempoExecucao')
-}
-*/

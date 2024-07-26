@@ -3,144 +3,142 @@
   margin: 0;
   box-sizing: border-box;
 }
-
 .btn-home {
-  width: 32.8rem;
   height: 6.7rem;
   border-radius: 2.4rem;
   font-size: 1.6rem;
   transition: all 0.8s;
+  width: 100%;
 }
 
-#container {
-  padding: 4rem;
-  max-width: 1440px;
-  margin: 0 auto;
+.container__no-message.hidden,
+.container__output-message.hidden {
+  display: none;
 }
 
-#container__empty-message {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  height: calc(100vh - 10rem);
-  background-color: #fff;
-  border-radius: 32px;
-  width: 40rem;
-  float: right;
-  margin-top: -7rem;
+.container {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-gap: 0.5rem;
+  // width: calc(34rem - 3rem);
+  margin: 1.6rem 2rem;
+
+  grid-template-areas:
+    'header '
+    'main '
+    'output-message'
+    'no-message';
 }
 
-#empty-message__message {
-  font-size: 2.4rem;
-  font-weight: bold;
-  margin-bottom: 1.6rem;
-  color: var(--gray-500);
+.container__header {
+  grid-area: header;
+}
+.container__main {
+  grid-area: main;
+  box-sizing: border-box;
+  margin-top: 8rem;
+  // width: calc(34rem - 3.2rem);
+  padding: 0 1.6rem;
 }
 
-#container__empty-message.hidden,
-#container__not-empty-message.hidden {
-  visibility: hidden;
-  height: 0;
-  width: 0;
+.main__form-text {
 }
 
-#container__not-empty-message {
-  display: flex;
-  padding: 3.2rem;
-  flex-direction: column;
-  height: 95vh;
-  background-color: #fff;
-  border-radius: 32px;
-  width: 40rem;
-  float: right;
-  margin-top: -7rem;
-}
-
-#not-empty-message {
-  display: flex;
-  flex-direction: column;
-  padding: 3.2rem;
-  justify-content: space-between;
-  height: 100vh;
-}
-
-#main {
-  padding-top: 8rem;
-  padding-left: 24rem;
-  width: 68rem;
-}
-
-#form {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-#form__input-text {
-  height: 30rem;
-  background: transparent;
+.main__form-text textarea {
+  box-sizing: border-box;
   border: none;
+  background: transparent;
+  height: 25rem;
+  width: 100%;
+  outline: none;
+  resize: none;
+}
+
+.main__form-text textarea,
+.main__form-text textarea::placeholder {
+  color: #0a3871;
   font-size: 3.2rem;
   font-family: 'Inter', sans-serif;
-  line-height: 4.8rem;
-  padding: 1.6rem;
-  outline: none;
-  margin-bottom: 2rem;
 }
 
-#form__alert {
+.form-text__container-image-and-alert-message {
   display: flex;
-  flex-direction: row;
   align-items: center;
+  height: 100%;
   gap: 0.8rem;
-  padding-bottom: 1.6rem;
+  padding: 1.6rem 0;
 }
-
-#form__img {
-  width: 1.6rem;
-  height: 1.6rem;
-}
-
-#form__alert-message {
+.main__container-image-and-alert-message p {
   font-size: 1.2rem;
-  color: var(--gray-400);
 }
-
-#form__actions {
+.form-text__container-actions {
   display: flex;
+  flex-direction: column;
   gap: 2.4rem;
 }
 
-#actions__btn-encrypt {
-  background-color: var(--dark-blue-300);
+.form-text__container-actions button:nth-child(1) {
+  background: var(--dark-blue-300);
   color: var(--light-blue-50);
 }
-#actions__btn-encrypt:hover {
-  background-color: var(--dark-blue-200);
-}
 
-#actions__btn-dencrypt {
-  background-color: var(--light-blue-50);
+.form-text__container-actions button:nth-child(2) {
+  background: transparent;
   color: var(--dark-blue-300);
-}
-#actions__btn-dencrypt:hover {
-  filter: brightness(0.8);
-}
-
-#not-empty-message__btn-copy {
-  background-color: transparent;
   border: 1px solid var(--dark-blue-300);
-  color: var(--dark-blue-300);
-  position: relative;
-  margin-top: auto;
 }
 
-#not-empty-message__btn-copy:hover {
-  background-color: var(--light-blue-50);
+.container__no-message {
+  grid-area: no-message;
+
+  margin-top: 6.4rem;
+  background-color: #ffff;
+  padding: 2.5rem;
+  border-radius: 32px;
+  text-align: center;
 }
 
-#not-empty-message__output-text {
-  font-size: 24px;
+.container__no-message img {
+  visibility: hidden;
+  width: 0;
+}
+
+.container__no-message strong {
+  font-weight: bold;
+  font-size: 2.4rem;
+  line-height: 120%;
+}
+
+.container__no-message p {
+  margin-top: 1.6rem;
+  font-size: 1.6rem;
   line-height: 150%;
+}
+
+.container__output-message {
+  grid-area: output-message;
+
+  margin-top: 6.4rem;
+  background-color: #ffff;
+  padding: 2.5rem;
+  border-radius: 32px;
+}
+
+.container__output-message textarea {
+  font-size: 2.4rem;
+  color: var(--gray-400);
+  box-sizing: border-box;
+  border: none;
+  background: transparent;
+  height: 25rem;
+  width: 100%;
+  outline: none;
+  resize: none;
+}
+
+.container__output-message button {
+  margin-top: 3.2rem;
+  background: transparent;
+  color: var(--dark-blue-300);
+  border: 1px solid var(--dark-blue-300);
 }

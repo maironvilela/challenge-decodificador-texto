@@ -2,59 +2,62 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet" />
-  <title>Document</title>
-  <link rel="stylesheet" type="text/css" href="global.css" media="screen" />
-  <link rel="stylesheet" type="text/css" href="styles.css" media="screen" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet" />
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="global.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="styles.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="styles-desktop.css" media="screen" />
 </head>
 
 <body>
-  <div id="container">
-    <header>
-      <img src="./assets/logo.svg" />
-    </header>
-   
-    <section id="container__empty-message"   >      
-        <img src="./assets/search.svg" />
-        <strong id="empty-message__message">Nenhuma mensagem encontrada</strong>
-        <span id="empty-message__information">
-          Digite um texto que voce deseje criptografar ou descriptografar
-        </span>
-    </section>
+    <div class="container">
 
-    <section id="container__not-empty-message" class="hidden"  >
-      <p id="not-empty-message__output-text">tes</p>
-      <button onclick="handleCopyTextOutputToInputText()" class="btn-home" id="not-empty-message__btn-copy">Copiar</button> 
-    </section>
+        <header class="container__header">
+            <img src="./assets/logo-cel.svg" />
+        </header>
 
-    <main id="main">
-      <form id="form">
-           <textarea id="form__input-text" placeholder="Digite seu Texto" ></textarea>
-          <div id="form__alert">
-            <img id="form__img" src="./assets/alert.svg" />
-            <span id="form__alert-message">Apenas letras minúsculas e sem acento.</span>
-         </div>
-   
+        <main class="container__main">
+            <form class="main__form-text" id="main__form-text">
+                <textarea id="form-text__input" placeholder="Digite seu Texto"></textarea>
+                <div class="form-text__container-image-and-alert-message">
+                    <img src="./assets/alert.svg" />
+                    <p>Apenas letras minúsculas e sem acento.</p>
+                </div>
+                <div class="form-text__container-actions">
+                    <button onclick="handleEncrypt()" class="btn-home">Criptografar</button>
+                    <button onclick="handleDecrypt()" class="btn-home">
+                        Descriptografar
+                    </button>
+                </div>
+            </form>
+        </main>
 
-        <div id="form__actions">
-          <button onclick="handleEncrypt()"  class="btn-home" id="actions__btn-encrypt">Criptografar</button>
-          <button onclick="handleDecrypt()" class="btn-home" id="actions__btn-dencrypt">
-            Descriptografar
-          </button>
-        </div>
-      </form>
-    </main>
+        <section class="container__no-message " id="container__no-message">
+            <img src="./assets/search.svg" />
+            <strong>Nenhuma mensagem encontrada</strong>
+            <p>
+                Digite um texto que voce deseje criptografar ou descriptografar
+            </p>
+        </section>
 
-
-  </div>
+        <section class="container__output-message hidden" id="container__output-message"  >
+            <textarea id="output-message__output-text" disabled></textarea>
+            <button onclick="handleCopyTextOutputToInputText()" class="btn-home">
+                    Copiar
+            </button>
+        </section>
 
 
-  </div>
-  <script src="app.js" defer></script>
+
+    </div>
+
+
+    </div>
+    <script src="app.js" defer></script>
 
 </body>
 
