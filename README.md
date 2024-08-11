@@ -24,6 +24,7 @@ O Challenge Decodificador de Texto da Alura é um desafio proposto pela platafor
 
 [![](https://img.shields.io/badge/Criptografar_texto-FFFFFF)]()
 [![](https://img.shields.io/badge/Descriptografar_texto-FFFFFF)]()
+[![](https://img.shields.io/badge/Permitir_apenas_letras_minusculas_e_sem_acento-FFFFFF)]()
 
 ## 🚀 Executando o projeto
 
@@ -35,3 +36,7 @@ git clone https://github.com/maironvilela/challenge-decodificador-texto.git
 ```
 
 **Passo 02:** Acesse a pasta do projeto e execute a arquivo "index.html"
+
+## Template Figma
+
+<https://www.figma.com/design/tvFEYhVfZTjdJ5P24RGV21/Alura-Challenge---Desafio-1---L%C3%B3gica?node-id=0-1>
