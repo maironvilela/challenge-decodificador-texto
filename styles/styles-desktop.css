@@ -1,12 +1,12 @@
 @media (min-width: 1200px) {
   body {
-    height: calc(100vh - 8rem);
-    margin: 0 8rem;
+    padding: 0 8rem;
+    overflow-y: hidden;
   }
   .container {
     margin: 4rem;
     display: grid;
-    grid-template-column: repeat(1, 1fr);
+    grid-template-columns: repeat(1fr, 1fr);
 
     grid-template-areas:
       'header header header no-message output-message'
@@ -15,19 +15,16 @@
 
   .container__header {
     grid-area: 'header';
-    height: 5rem;
   }
 
   .container__main {
     grid-area: main;
-    width: 100%;
-    padding: 0;
-    padding-right: 10rem;
-    padding-left: 24rem;
+    padding: 0 10rem;
   }
 
   .container__main textarea {
-    height: 51rem;
+    height: 27rem;
+    overflow-y: scroll;
   }
 
   .form-text__container-actions {
@@ -38,23 +35,18 @@
   .container__output-message {
     grid-area: output-message;
     width: 40rem;
-    margin: 0;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 5rem;
+    padding: 3rem;
   }
-  .container__output-message button {
-    .container__output-message;
-  }
+
   .container__no-message {
     grid-area: no-message;
-    margin-left: auto;
     width: 40rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin: 0;
   }
 
   .container__no-message img {
@@ -63,6 +55,7 @@
   }
 
   .container__output-message textarea {
-    height: 68rem;
+    height: 36rem;
+    overflow-y: scroll;
   }
 }
