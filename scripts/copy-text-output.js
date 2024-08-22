@@ -3,6 +3,8 @@ function handleCopyTextOutputToInputText() {
   const inputText = document.getElementById('form-text__input')
 
   navigator.clipboard.writeText(outputText.value)
+  alert(`Texto ${outputText.value} copiado com sucesso`)
+
   outputText.value = ''
 
   hiddenElementById('container__output-message')

@@ -37,6 +37,7 @@ body {
   text-rendering: optimizeLegibility;
   word-wrap: break-word;
   overflow-wrap: break-word;
+  overflow-y: hidden;
 }
 
 body,

@@ -1,62 +1,41 @@
 @media (min-width: 1200px) {
-  body {
-    padding: 0 8rem;
-    overflow-y: hidden;
-  }
   .container {
-    margin: 4rem;
-    display: grid;
-    grid-template-columns: repeat(1fr, 1fr);
-
-    grid-template-areas:
-      'header header header no-message output-message'
-      'main    main   main  no-message output-message';
-  }
-
-  .container__header {
-    grid-area: 'header';
+    padding: 2rem 10%;
   }
 
   .container__main {
-    grid-area: main;
-    padding: 0 10rem;
+    width: 50%;
   }
 
   .container__main textarea {
-    height: calc(100vh - 50rem);
-    overflow-y: scroll;
+    height: calc(100vh - 400px);
   }
-
-  .form-text__container-actions {
+  .container__main .form-text__container-actions {
     display: flex;
     flex-direction: row;
   }
 
+  .container__no-message,
   .container__output-message {
-    grid-area: output-message;
+    position: absolute;
+    top: 0;
+    right: 5%;
+    height: calc(100vh - 100px);
     width: 40rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 3rem;
   }
 
   .container__no-message {
-    grid-area: no-message;
-    width: 40rem;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    padding-block: 10%;
   }
-
   .container__no-message img {
     visibility: visible;
-    width: 100%;
+    width: 40rem;
+    height: 50rem;
   }
 
   .container__output-message textarea {
-    height: 36rem;
-    overflow-y: scroll;
-    height: calc(100vh - 41rem);
+    height: calc(100vh - 300px);
   }
 }
