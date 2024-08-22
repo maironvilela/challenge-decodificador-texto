@@ -38,6 +38,7 @@ body {
   word-wrap: break-word;
   overflow-wrap: break-word;
   overflow-y: hidden;
+  margin: 0 10%;
 }
 
 body,
